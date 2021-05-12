@@ -20,85 +20,74 @@ body {
   opacity: 1;
 }
 
-nav {
-  height: 10vh;
+.container {
+  height: 90vh;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   padding: 0 80px;
-}
-
-.sign-in,
-.sign-up {
-  background: rgba(255, 255, 255, 0.4);
-  padding: 5px 20px;
-  line-height: 1.5;
-  font-weight: 200;
-  margin-right: 40px;
-  letter-spacing: 1px;
-  border-radius: 18px;
-  border: 1px solid white;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup {
-  background: rgba(255, 255, 255, 0.4);
-  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px 50px;
   border-radius: 18px;
   border: 1px solid white;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  height: fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.homepage-container {
-  height: 90vh;
-  width: 100%;
-  padding: 0 80px;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
+.sign-up {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 20px;
+  line-height: 1.5;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border-radius: 18px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 400;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
 }
 
-main > div {
-  height: 50%;
+.email,
+.password,
+.repassword,
+.name {
+  border-radius: 15px;
+  padding: 7px 15px;
+  margin-top: 25px;
+  width: 200px;
+  border: none;
+  color: black;
 }
 
-.left-section {
-  transform: translateY(60%);
+.email:focus,
+.password:focus,
+.repassword:focus,
+.name:focus {
+  outline: none;
 }
 
-.heading {
-  font-size: 55px;
-  letter-spacing: 2px;
+.email::placeholder,
+.password::placeholder,
+.repassword::placeholder,
+.name::placeholder {
+  color: black;
+  font-weight: 450;
 }
 
-.sub-heading {
-  font-size: 25px;
-  font-weight: normal;
-  letter-spacing: 3px;
-}
-
-.right-section {
-  /* background: lightblue; */
-  transform: translateY(90px);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.homepage-illustration {
-  width: 90%;
-  height: 400px;
+.repassword {
+  margin-bottom: 25px;
 }
 
 .circle1,
