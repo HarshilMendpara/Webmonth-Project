@@ -20,6 +20,12 @@ body {
   opacity: 1;
 }
 
+.circle1,
+.circle2 {
+  z-index: -5;
+  position: absolute;
+}
+
 .container {
   height: 90vh;
   width: 100%;
@@ -29,25 +35,26 @@ body {
   align-items: center;
 }
 
-.signup {
+.createnote {
   background: rgba(255, 255, 255, 0.2);
-  padding: 30px 50px;
+  padding: 30px 35px;
   border-radius: 18px;
   border: 1px solid white;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   height: 70%;
-  width: 25%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.sign-up {
+.create-note {
   background: rgba(255, 255, 255, 0.1);
   padding: 5px 20px;
   line-height: 1.5;
+  font-weight: 200;
   letter-spacing: 1px;
   border-radius: 18px;
   border: 1px solid white;
@@ -58,44 +65,24 @@ body {
   cursor: pointer;
 }
 
-.email,
-.password,
-.repassword,
-.name {
+.note {
   border-radius: 15px;
+  padding: 5px 10px;
+  height: 290px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 275px;
   padding: 7px 15px;
-  margin-top: 37px;
-  width: 250px;
+  color: black;
   border: none;
-  color: black;
-  transition: 0.3s ease-out;
 }
 
-.email:focus,
-.password:focus,
-.repassword:focus,
-.name:focus {
+.note:focus {
   outline: none;
-  width: 280px;
 }
 
-.email::placeholder,
-.password::placeholder,
-.repassword::placeholder,
-.name::placeholder {
+.note::placeholder {
   color: black;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.repassword {
-  margin-bottom: 37px;
-}
-
-.circle1,
-.circle2 {
-  z-index: -5;
-  position: absolute;
 }
 
 .circle1 {

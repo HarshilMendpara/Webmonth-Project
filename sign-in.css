@@ -36,8 +36,8 @@ body {
   border: 1px solid white;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  height: fit-content;
-  width: fit-content;
+  height: 50%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,25 +63,29 @@ body {
 .password {
   border-radius: 15px;
   padding: 5px 10px;
-  margin-top: 25px;
-  width: 200px;
+  margin-top: 35px;
+  width: 250px;
   padding: 7px 15px;
   color: black;
   border: none;
+  transition: 0.3s ease-in-out;
 }
 
 .email:focus,
 .password:focus {
   outline: none;
+  width: 280px;
 }
 
 .email::placeholder,
 .password::placeholder {
   color: black;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 .password {
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 .circle1,
