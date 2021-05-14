@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="create-note.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Create Note</title>
   </head>
   <body>
     <main class="container">
       <div class="createnote">
         <h1>Create Note</h1>
+        <input
+          maxlength="20"
+          type="text"
+          placeholder="Heading"
+          class="create-note-heading"
+        />
         <textarea class="note" placeholder="Enter Note"></textarea>
         <input type="button" value="Create" class="create-note" />
       </div>
