@@ -1,38 +1,62 @@
 const body = document.querySelector("body");
+const apiURL = "http://localhost:8000";
+
+let cardData = [];
 
 window.addEventListener("load", () => {
   body.classList.add("visible");
+
+  if(token){
+    fetch(`${apiURL}/note/getallnotes`, {
+      method: "GET",
+      headers:{
+        authorization: token,
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      cardData = data.data;
+      console.log(data);
+      createNotes(cardData);
+    })
+    .catch((err) => {
+      alert("Error fetching notes... Re-try...");
+      console.log(err);
+    });
+  }
+
+  
 });
 
 const cardContainer = document.querySelector(".card-container");
+const token = localStorage.getItem("jwt");
+const createNote = document.querySelector(".create-note");
+const logout = document.querySelector(".log-out");
 
-const cardData = [
-  {
-    heading: "heading1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure sequi culpa officiis quae, quod aperiam temporibus pariatur, est laboriosam corporis similique laudantium repellat quas expedita possimus tempora provident doloremque illum exercitationem, architecto deserunt. Fuga repellat incidunt assumenda dolore cumque nihil facilis repudiandae? Explicabo aspernatur earum nostrum amet aperiam, ab distinctio!",
-    id: 1,
-  },
-  { heading: "heading2", content: "dhjalk;gjasjfasfs", id: 2 },
-  { heading: "heading3", content: "dhjalk;gjasjfasfs", id: 3 },
-  { heading: "heading4", content: "dhjalk;gjasjfasfs", id: 4 },
-  { heading: "heading5", content: "dhjalk;gjasjfasfs", id: 5 },
-  { heading: "heading6", content: "dhjalk;gjasjfasfs", id: 6 },
-  { heading: "heading7", content: "dhjalk;gjasjfasfs", id: 7 },
-];
+logout.addEventListener("click", () => {
+  localStorage.removeItem("jwt");
+  location.href = "/";
+})
+
+createNote.addEventListener("click", () => {
+  location.href = "/pages/createNote/create-note.html";
+})
 
 const createNotes = (array) => {
+
+  cardContainer.innerHTML = "";
+
   array.forEach((cardObj) => {
-    const { heading, content, id } = cardObj;
+    const { heading, content, noteId } = cardObj;
 
     const card = document.createElement("div");
     card.classList.add("card");
-    card.id = id;
+    card.id = noteId;
 
     const insideHtml = `<div class="card-header">
     <div class="card-heading">${heading}</div>
     <div class="edit-note">
-      <a href="../updateNote/update-note.html?noteId=${id}">
+      <a href="../updateNote/update-note.html?noteId=${noteId}">
         <img src="/assets/edit-note.svg" alt="edit-note"
       /></a>
     </div>
@@ -47,4 +71,4 @@ const createNotes = (array) => {
   });
 };
 
-createNotes(cardData);
+
