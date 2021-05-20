@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 const apiURL = "https://shrouded-plains-20071.herokuapp.com";
 
-// let cardData = [];
+let cardData = [];
 
 window.addEventListener("load", () => {
   body.classList.add("visible");
@@ -15,9 +15,9 @@ window.addEventListener("load", () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      let cardData = data.data;
+      cardData = data.data;
       console.log(data);
-      createNotes(cardData);
+      createNotes(data.data);
     })
     .catch((err) => {
       alert("Error fetching notes... Re-try...");
