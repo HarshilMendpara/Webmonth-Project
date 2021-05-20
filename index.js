@@ -10,4 +10,5 @@ window.addEventListener("load", () => {
   if(token){
     location.href = "/pages/dashboard/dashboard.html";
   }
+  
 });
