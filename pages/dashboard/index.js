@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 const apiURL = "https://shrouded-plains-20071.herokuapp.com";
 
-let cardData = [];
+// let cardData = [];
 
 window.addEventListener("load", () => {
   body.classList.add("visible");
@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      cardData = data.data;
+      let cardData = data.data;
       console.log(data);
       createNotes(cardData);
     })
@@ -46,7 +46,7 @@ const createNotes = (array) => {
 
   cardContainer.innerHTML = "";
 
-  array.forEach((cardObj) => {
+    array.forEach((cardObj) => {
     const { heading, content, noteId } = cardObj;
 
     const card = document.createElement("div");
