@@ -15,15 +15,16 @@ window.addEventListener("load", () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      
+
       cardData = data.data;
       console.log(data);
-      createNotes(data.data);
+      createNotes(cardData);
 
     })
     .catch((err) => {
       alert("Error fetching notes... Re-try...");
       console.log(err);
+      console.log(cardData);
     });
   }
 
