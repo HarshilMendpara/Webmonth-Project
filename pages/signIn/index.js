@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const apiURL = "http://localhost:8000";
+const apiURL = "https://shrouded-plains-20071.herokuapp.com";
 
 window.addEventListener("load", () => {
   body.classList.add("visible");

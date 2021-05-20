@@ -11,7 +11,7 @@ console.log(noteId);
 
 const updateNoteButton = document.querySelector(".create-note-button");
 
-const apiURL = "http://localhost:8000";
+const apiURL = "https://shrouded-plains-20071.herokuapp.com";
 const token = localStorage.getItem("jwt");
 
 updateNoteButton.addEventListener("click", () => {
