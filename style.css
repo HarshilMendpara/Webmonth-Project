@@ -79,26 +79,26 @@ main > div {
 }
 
 .heading {
-  font-size: 55px;
+  font-size: 3rem;
   letter-spacing: 2px;
 }
 
 .sub-heading {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: normal;
   letter-spacing: 3px;
 }
 
 .right-section {
   /* background: lightblue; */
-  transform: translateY(90px);
+  transform: translateY(40%);
   display: flex;
   justify-content: flex-end;
 }
 
 .homepage-illustration {
   width: 90%;
-  height: 400px;
+  height: 120%;
 }
 
 .circle1,
@@ -131,4 +131,53 @@ main > div {
   background: linear-gradient(180deg, #ff57d0 0%, #0d99ff 99.99%, #0094ff 100%);
   filter: blur(5px);
   transform: rotate(18deg);
+}
+
+@media only screen and (max-width: 400px) {
+  nav {
+    justify-content: flex-end;
+    padding: 0 7%;
+    margin-top: 7%;
+    /* background: #0094ff; */
+  }
+
+  .homepage-container {
+    /* background: #0d99ff; */
+    padding: 20% 5%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .left-section {
+    transform: translateY(0);
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+
+  .right-section {
+    /* background: lightblue; */
+    transform: translateY(-20%);
+    display: flex;
+    justify-content: center;
+  }
+
+  .homepage-illustration {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle1,
+  .circle2 {
+    display: none;
+  }
 }

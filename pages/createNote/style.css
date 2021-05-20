@@ -123,3 +123,34 @@ body {
   filter: blur(5px);
   transform: rotate(18deg);
 }
+
+@media only screen and (max-width: 400px) {
+  .container {
+    padding: 0;
+  }
+
+  .createnote {
+    width: 80%;
+    padding: 3%;
+    height: 60%;
+    justify-self: center;
+  }
+
+  .create-note-heading {
+    margin-top: 25px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .note {
+    border-radius: 15px;
+    padding: 5px 10px;
+    height: 200px;
+    margin-top: 15px;
+  }
+
+  .circle1,
+  .circle2 {
+    display: none;
+  }
+}
