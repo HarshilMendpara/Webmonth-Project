@@ -2,6 +2,25 @@ const body = document.querySelector("body");
 
 window.addEventListener("load", () => {
   body.classList.add("visible");
+
+  fetch(`${apiURL}/note/edit/${noteId}`, {
+    method: "GET",
+    headers:{
+      authorization: token,
+    },
+  })
+  .then((res) => res.json())
+  .then((data) => {
+
+    console.log(data.data);
+    document.querySelector(".create-note-input").value = data.data.content;
+    document.querySelector(".create-note-heading").value = data.data.heading;
+
+  })
+  .catch((err) => {
+    alert("Error adding note... Re-try...");
+    console.log(err);
+  });
 });
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -14,10 +33,12 @@ const updateNoteButton = document.querySelector(".create-note-button");
 const apiURL = "https://shrouded-plains-20071.herokuapp.com";
 const token = localStorage.getItem("jwt");
 
+
 updateNoteButton.addEventListener("click", () => {
+
   const content = document.querySelector(".create-note-input").value;
   const heading = document.querySelector(".create-note-heading").value;
-  
+
   if(token){
 
     fetch(`${apiURL}/note/update/${noteId}`, {

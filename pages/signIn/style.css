@@ -59,6 +59,14 @@ body {
   cursor: pointer;
 }
 
+img {
+  position: absolute;
+  top: 33%;
+  bottom: 50%;
+  left: 40%;
+  right: 50%;
+}
+
 .email,
 .password {
   border-radius: 15px;
@@ -137,6 +145,14 @@ body {
     border-radius: 15px;
     width: 220px;
     padding: 7px 15px;
+  }
+
+  img {
+    position: absolute;
+    top: 33%;
+    bottom: 50%;
+    left: 20%;
+    right: 50%;
   }
 
   .email:focus,

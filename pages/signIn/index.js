@@ -15,6 +15,8 @@ signinForm.addEventListener("submit", (event) => {
   const email = document.querySelector(".email").value;
   const password = document.querySelector(".password").value;
 
+  body.innerHTML = `<img src="/assets/Infinity-2.1s-243px.gif" alt="buffering">`;
+
   fetch(`${apiURL}/auth/signin`, {
     method: "POST",
     headers:{
@@ -31,7 +33,8 @@ signinForm.addEventListener("submit", (event) => {
       localStorage.setItem("jwt", token);
       location.href = "/pages/dashboard/dashboard.html";
     }else{
-      alert("Please Sign-In again...");
+      alert("Please Sign-Up first...");
+      location.href = "/pages/signIn/sign-in.html";
     }
     
     console.log(data);

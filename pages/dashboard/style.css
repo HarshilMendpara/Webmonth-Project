@@ -12,6 +12,7 @@ body {
   width: 100%;
   background: linear-gradient(45deg, #ff9ce3, #4ab3ff);
   overflow: hidden;
+  overflow-y: scroll;
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -21,7 +22,7 @@ body {
 }
 
 h1 {
-  margin-right: 720px;
+  /* margin-right: 10%; */
   font-size: 41px;
 }
 
@@ -29,7 +30,7 @@ nav {
   height: 10vh;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 70px 80px;
 }
@@ -49,25 +50,30 @@ nav {
   cursor: pointer;
 }
 
+.create-note {
+  margin-left: auto;
+}
+
 a {
   text-decoration: none;
 }
 
 .card-container {
-  height: 90vh;
+  height: auto;
   width: 100%;
   padding: 0 80px;
   display: flex;
   align-items: flex-start;
   gap: 2%;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
+  justify-content: flex-start;
 }
 
 .card {
-  width: 200px;
+  width: 250px;
   padding: 10px;
-  height: 50%;
+  height: auto;
+  margin-bottom: 2%;
   background: lightblue;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.4);
@@ -78,9 +84,7 @@ a {
 
 .card-header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   /* background: lightblue; */
 }
 
@@ -89,22 +93,32 @@ a {
   font-size: 20px;
 }
 
-.edit-note {
-  cursor: pointer;
-  height: 20%;
-  width: 20%;
+.card-operation {
+  width: 290px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.edit-note > a img {
-  height: 100%;
-  width: 100%;
+.edit-note,
+.delete-note {
+  cursor: pointer;
+  margin-top: 8%;
+  height: 30%;
+  width: 30%;
+}
+
+.edit-note > a img,
+.delete-note > img {
+  height: 30%;
+  width: 30%;
 }
 
 .card-content {
   font-size: 14px;
   margin-top: 10px;
   width: 100%;
-  height: 80%;
+  height: auto;
   overflow-y: scroll;
   border: 1px solid white;
   padding: 10px;
@@ -129,23 +143,23 @@ a {
 
 @media only screen and (max-width: 400px) {
   body {
-    overflow: scroll;
+    overflow-y: scroll;
     background: #4ab3ff;
   }
 
   nav {
+    /* background: #ff9ce3; */
     width: 100%;
     height: 10%;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(2, auto);
     padding: 5% 5%;
-    padding-right: 12%;
-    /* background: #0094ff; */
   }
 
   .create-note,
   .log-out {
-    padding: 5px 20px;
+    padding: 5px 15px;
     margin-right: 0;
     margin-top: 5%;
     margin-bottom: 10%;
@@ -173,7 +187,7 @@ a {
   }
 
   .card {
-    width: 100%;
+    width: 300px;
     padding: 3%;
     height: auto;
     justify-self: center;
@@ -184,10 +198,15 @@ a {
     font-size: 1.2rem;
   }
 
-  .edit-note {
+  .card-operation {
+    width: 340px;
+  }
+
+  .edit-note,
+  .delete-note {
     cursor: pointer;
-    height: 12%;
-    width: 12%;
+    height: 25%;
+    width: 25%;
   }
 
   .card-content {

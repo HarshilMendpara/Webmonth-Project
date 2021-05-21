@@ -98,6 +98,14 @@ body {
   position: absolute;
 }
 
+img {
+  position: absolute;
+  top: 33%;
+  bottom: 50%;
+  left: 40%;
+  right: 50%;
+}
+
 .circle1 {
   height: 600px;
   width: 600px;
@@ -150,6 +158,14 @@ body {
   .repassword:focus,
   .name:focus {
     width: 260px;
+  }
+
+  img {
+    position: absolute;
+    top: 33%;
+    bottom: 50%;
+    left: 20%;
+    right: 50%;
   }
 
   .circle1,
